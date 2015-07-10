@@ -8,12 +8,8 @@
  * Controller of the flapperNewsApp
  */
 angular.module('flapperNewsApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.posts = [
-      {title: 'post1', upvotes: 5},
-      {title: 'post2', upvotes: 2},
-      {title: 'post3', upvotes: 15}
-    ];
+  .controller('MainCtrl', ['$scope', 'posts', function ($scope, posts) {
+    $scope.posts = posts.posts;
 
     $scope.addPost = function() {
       if(!$scope.title || $scope.title === '') { return; }
@@ -33,4 +29,4 @@ angular.module('flapperNewsApp')
     $scope.decrementUpvotes = function (post) {
       post.upvotes -= 1;
     };
-  });
+  }]);
