@@ -9,7 +9,6 @@
  */
 angular.module('flapperNewsApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.test = 'Hello World';
     $scope.posts = [
       {title: 'post1', upvotes: 5},
       {title: 'post2', upvotes: 2},
