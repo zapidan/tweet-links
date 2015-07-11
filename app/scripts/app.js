@@ -10,6 +10,7 @@
  */
 angular
   .module('flapperNewsApp', [
+    'ui.router',
     'ngAnimate',
     'ngCookies',
     'ngResource',
