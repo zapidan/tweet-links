@@ -45,7 +45,12 @@ function($stateProvider, $urlRouterProvider) {
       url: '/home',
       templateUrl: 'views/main.html',
       controller: 'MainCtrl'
-    });
+    })
+    .state('post', {
+      url: '/posts/{id}',
+      templateUrl: 'views/post.html',
+      controller: 'PostsCtrl'
+  });
 
   $urlRouterProvider.otherwise('home');
 }]);

@@ -26,6 +26,9 @@
         - upvotes {{post.upvotes}}
       </span>
       <span class="glyphicon glyphicon-thumbs-down" ng-click="decrementUpvotes(post)"></span>
+      <span>
+        <a href="#/posts/{{$index}}">Comments</a>
+      </span>
     </div>
     <form ng-submit="addPost()">
       <input type="text" placeholder="Title" ng-model="title"></input>
