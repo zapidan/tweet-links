@@ -14,8 +14,6 @@ angular.module('flapperNewsApp')
     'posts',
     function ($scope, $stateParams, posts) {
       $scope.post = posts.posts[$stateParams.id];
-            console.log('fire posts service');
-
 
       $scope.addComment = function() {
         if ($scope.body === '') { return; }
