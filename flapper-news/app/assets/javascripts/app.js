@@ -11,6 +11,7 @@
 angular
   .module('flapperNewsApp', [
     'ui.router',
+    'templates',
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -27,12 +28,12 @@ angular
     $stateProvider
       .state('home', {
         url: '/home',
-        templateUrl: 'views/main.html',
+        templateUrl: 'home/_home.html',
         controller: 'MainCtrl'
       })
       .state('post', {
         url: '/posts/{id}',
-        templateUrl: 'views/post.html',
+        templateUrl: 'posts/_post.html',
         controller: 'PostsCtrl'
     });
 
