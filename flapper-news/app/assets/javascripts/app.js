@@ -11,13 +11,7 @@
 angular
   .module('flapperNewsApp', [
     'ui.router',
-    'templates',
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch'
+    'templates'
   ])
 
   .config([
