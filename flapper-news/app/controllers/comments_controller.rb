@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_post, only: [:create, :upvote, :downvote, :show]
+  before_action :authenticate_user!, only: [:create, :upvote, :downvote]
 
   def show
     comments = @post.comments

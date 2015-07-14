@@ -15,7 +15,7 @@
     </div>
   
     <div ng-repeat="post in posts | orderBy: '-upvotes'">
-      <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(post)"></span>
+      <span class="glyphicon glyphicon-thumbs-up" ng-show="signedIn()" ng-click="incrementUpvotes(post)"></span>
       <span style="font-size:20px; margin-left:10px;">
         <a ng-show="post.link" href="{{post.link}}">
           {{post.title}} 
@@ -25,12 +25,12 @@
         </span>
         - upvotes {{post.upvotes}}
       </span>
-      <span class="glyphicon glyphicon-thumbs-down" ng-click="decrementUpvotes(post)"></span>
+      <span class="glyphicon glyphicon-thumbs-down" ng-show="signedIn()" ng-click="decrementUpvotes(post)"></span>
       <span>
         <a href="#/posts/{{post.id}}">Comments</a>
       </span>
     </div>
-    <form ng-submit="addPost()">
+    <form ng-show="signedIn()" ng-submit="addPost()">
       <input type="text" placeholder="Title" ng-model="title"></input>
       <input type="text" placeholder="Link" ng-model="link"></input>
       <button type="submit">Post</button>

@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :upvote, :downvote]
+  before_action :authenticate_user!, only: [:create, :upvote, :downvote]
 
   def index
     respond_with Post.all

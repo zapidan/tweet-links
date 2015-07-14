@@ -12,8 +12,11 @@ angular.module('flapperNewsApp')
     '$scope',
     'posts',
     'post1',
-    function ($scope, posts, post1) {
+    'Auth',
+    function ($scope, posts, post1, Auth) {
       $scope.post = post1;
+
+      $scope.signedIn = Auth.isAuthenticated;
 
       $scope.addComment = function() {
         if ($scope.body === '') { return; }
