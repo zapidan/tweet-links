@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :upvote]
+  before_action :set_post, only: [:show, :upvote, :downvote]
 
   def index
     respond_with Post.all
@@ -15,6 +15,12 @@ class PostsController < ApplicationController
 
   def upvote
     @post.increment!(:upvotes)
+
+    respond_with @post
+  end
+
+  def downvote
+    @post.decrement!(:upvotes)
 
     respond_with @post
   end

@@ -28,5 +28,19 @@ angular.module('flapperNewsApp')
       });
     };
 
+    o.upvote = function(post) {
+      return $http.put('/posts/' + post.id + '/upvote.json')
+        .success(function(data) {
+          post.upvotes += 1;
+        });
+    };
+
+    o.downvote = function(post) {
+      return $http.put('/posts/' + post.id + '/downvote.json')
+        .success(function(data) {
+          post.upvotes -= 1;
+        }); 
+    };
+
     return o;
   }]);

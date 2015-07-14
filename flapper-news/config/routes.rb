@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     end
 
     put 'upvote', to: 'posts#upvote', on: :member
+    put 'downvote', to: 'posts#downvote', on: :member
   end
 end
