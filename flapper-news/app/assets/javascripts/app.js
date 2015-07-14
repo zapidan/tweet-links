@@ -11,7 +11,8 @@
 angular
   .module('flapperNewsApp', [
     'ui.router',
-    'templates'
+    'templates',
+    'Devise'
   ])
 
   .config([
