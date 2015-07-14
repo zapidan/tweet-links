@@ -23,7 +23,12 @@ angular
       .state('home', {
         url: '/home',
         templateUrl: 'home/_home.html',
-        controller: 'MainCtrl'
+        controller: 'MainCtrl',
+        resolve: {
+          postPromise: ['posts', function(posts) {
+            return posts.getAll();
+          }]
+        }
       })
       .state('post', {
         url: '/posts/{id}',
