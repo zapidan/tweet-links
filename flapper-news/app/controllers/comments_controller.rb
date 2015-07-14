@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_post, only: [:create, :upvote, :show]
+  before_action :set_post, only: [:create, :upvote, :downvote, :show]
 
   def show
     comments = @post.comments
@@ -16,6 +16,13 @@ class CommentsController < ApplicationController
   def upvote
     comment = @post.comments.find(params[:id])
     comment.increment!(:upvotes)
+
+    respond_with @post, comment
+  end
+
+   def downvote
+    comment = @post.comments.find(params[:id])
+    comment.decrement!(:upvotes)
 
     respond_with @post, comment
   end

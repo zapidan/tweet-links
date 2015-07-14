@@ -35,7 +35,7 @@ angular
         templateUrl: 'posts/_post.html',
         controller: 'PostsCtrl',
         resolve: {
-        post: ['$stateParams', 'posts', function($stateParams, posts) {
+        post1: ['$stateParams', 'posts', function($stateParams, posts) {
             return posts.get($stateParams.id);
         }]
 }

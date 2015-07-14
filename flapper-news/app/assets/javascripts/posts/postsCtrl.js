@@ -11,25 +11,27 @@ angular.module('flapperNewsApp')
   .controller('PostsCtrl', [
     '$scope',
     'posts',
-    'post',
-    function ($scope, posts, post) {
-      $scope.post = post;
+    'post1',
+    function ($scope, posts, post1) {
+      $scope.post = post1;
 
       $scope.addComment = function() {
         if ($scope.body === '') { return; }
-        $scope.post.comments.push({
+        posts.addComment(post1.id, {
           body: $scope.body,
-          author: 'user',
-          upvotes: 0
+        }).success(function(comment) {
+          comment.author = 'user';
+          comment.upvotes = 0;
+          $scope.post.comments.push(comment);
         });
         $scope.body = '';
       };  
 
       $scope.incrementUpvotes = function (comment) {
-        comment.upvotes += 1;
+        posts.upvoteComment(post1, comment);
       };
 
       $scope.decrementUpvotes = function (comment) {
-        comment.upvotes -= 1;
+        posts.downvoteComment(post1, comment);
       };
   }]);
