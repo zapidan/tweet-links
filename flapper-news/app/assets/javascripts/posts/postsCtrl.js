@@ -23,7 +23,6 @@ angular.module('flapperNewsApp')
         posts.addComment(post1.id, {
           body: $scope.body,
         }).success(function(comment) {
-          comment.author = 'user';
           comment.upvotes = 0;
           $scope.post.comments.push(comment);
         });

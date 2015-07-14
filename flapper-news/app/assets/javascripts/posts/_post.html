@@ -13,7 +13,7 @@
   <span class="glyphicon glyphicon-thumbs-up" ng-show="signedIn()" ng-click="incrementUpvotes(comment)"></span>
   {{comment.upvotes}} 
   <span class="glyphicon glyphicon-thumbs-down" ng-show="signedIn()" ng-click="decrementUpvotes(comment)"></span>
-  - by {{comment.author}}
+  - by {{comment.user.username}}
   <span style="font-size:20px; margin-left:10px;">
     {{comment.body}}
   </span>

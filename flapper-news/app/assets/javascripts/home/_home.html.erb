@@ -24,6 +24,7 @@
           {{post.title}}
         </span>
         - upvotes {{post.upvotes}}
+        <span>posted by <a ng-href="#/users/{{post.user.username}}">{{post.user.username}}</a></span>
       </span>
       <span class="glyphicon glyphicon-thumbs-down" ng-show="signedIn()" ng-click="decrementUpvotes(post)"></span>
       <span>
