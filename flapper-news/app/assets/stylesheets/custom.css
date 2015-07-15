@@ -1,0 +1,18 @@
+.footer {
+  margin-top: 25px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+.page-header {
+  text-align: center;
+}
+
+.posts {
+  text-align: center;
+}
+
+.login_form .signup_form {
+  margin: 0 auto;
+  width: 300px;
+}
