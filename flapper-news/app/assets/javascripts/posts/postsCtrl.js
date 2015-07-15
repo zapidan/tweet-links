@@ -7,8 +7,7 @@
  * # PostsCtrl
  * Controller of the flapperNewsApp
  */
-angular.module('flapperNewsApp')
-  .controller('PostsCtrl', [
+app.controller('PostsCtrl', [
     '$scope',
     'posts',
     'post1',

@@ -7,11 +7,10 @@
  * # posts
  * Factory in the flapperNewsApp.
  */
-angular.module('flapperNewsApp')
-  .factory('posts', [
-    '$http',
-    function ($http) {
-    
+ app.factory('posts', [
+  '$http',
+  function ($http) {
+  
     var o = {
       posts: []
     };
@@ -67,4 +66,5 @@ angular.module('flapperNewsApp')
     };
 
     return o;
-  }]);
+  }
+]);

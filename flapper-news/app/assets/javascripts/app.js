@@ -8,14 +8,13 @@
  *
  * Main module of the application.
  */
-angular
-  .module('flapperNewsApp', [
-    'ui.router',
-    'templates',
-    'Devise'
-  ])
 
-  .config([
+var app = angular.module('tweetLinksApp', [
+                          'ui.router',
+                          'templates',
+                          'Devise']);
+
+app.config([
   '$stateProvider',
   '$urlRouterProvider',
   function($stateProvider, $urlRouterProvider) {
