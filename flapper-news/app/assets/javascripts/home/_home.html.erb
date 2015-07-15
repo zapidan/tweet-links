@@ -15,7 +15,7 @@
 <div ng-repeat="post in posts | orderBy: '-upvotes'" class="posts">
   <span class="glyphicon glyphicon-thumbs-up" ng-show="signedIn()" ng-click="incrementUpvotes(post)"></span>
   <span style="font-size:20px; margin-left:10px;">
-    <a ng-show="post.link" ng-href="{{post.link}}">
+    <a ng-show="post.link" ng-href="{{post.link | urlFilter}}">
       {{post.title}} 
     </a>
     <span ng-hide="post.link">
